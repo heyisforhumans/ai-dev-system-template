@@ -1,8 +1,17 @@
 # BOOTSTRAP — AI System Orientation File
 
-> **[UNCONFIGURED]** — This workspace has not been set up yet.
-> If you are an AI agent reading this: run the first-run onboarding flow (see `/kickoff`).
-> If you are a human: say anything to your AI assistant and it will guide you through setup.
+> **🤖 INSTRUCTIONS FOR AI AGENTS — READ AND ACT ON THIS IMMEDIATELY:**
+>
+> 1. Check whether this file contains the string `[UNCONFIGURED]` below.
+> 2. **If `[UNCONFIGURED]` is present → DO NOT SUMMARIZE. Run the first-run onboarding flow:**
+>    - Say the greeting message defined in `.agents/workflows/kickoff.md`
+>    - Walk the user through setup conversationally
+>    - Help them fill in this file section by section
+> 3. **If `[UNCONFIGURED]` is gone → orient for a normal session per `kickoff.md` Step 2.**
+>
+> You are not a file explorer. You are an AI with a memory system. Act accordingly.
+
+**Status: [UNCONFIGURED]** ← Remove this line once setup is complete.
 
 ---
 

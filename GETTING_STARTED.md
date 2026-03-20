@@ -55,17 +55,22 @@ cp .env.template .env
 ```
 
 ### Step 2: Open the folder in your AI tool
-Point your AI coding assistant (Antigravity, Cursor, Claude, etc.) at this folder.
+Point your AI coding assistant (Antigravity, Cursor, Claude, etc.) at this folder. See [`docs/platform-guide.md`](./docs/platform-guide.md) if you're not sure how.
 
-### Step 3: Say anything
-Your AI will detect the `[UNCONFIGURED]` marker in `BOOTSTRAP.md` and introduce itself:
+### Step 3: Send the first prompt
+
+**This is the only non-obvious step.** Your AI won't self-activate by just having the files — you need to tell it what to do once.
+
+Open **[`FIRST_PROMPT.md`](./FIRST_PROMPT.md)** in this folder and copy-paste the message inside. Send it as your first message.
+
+The AI will respond:
 
 > *"👋 Hey — it looks like this is your first session with the AI Dev System. This memory stack is modeled after Rails MVC conventions, adapted for AI-assisted development. Would you like me to walk you through how it works and help you configure your workspace?"*
 
-Say yes. The AI will walk you through filling in `BOOTSTRAP.md` together (takes ~10 minutes). After that, it remembers everything about your project permanently.
+Say yes. It walks you through filling in `BOOTSTRAP.md` (~10 minutes). After that, you never need to explain your project again.
 
 ### Step 4: Start building
-When you start working on a new app, use the `/new-app` workflow:
+Use `/new-app` when you're ready to start a project:
 > "Let's start a new app called [name]"
 
 The AI creates the entire MVC folder structure and all memory files automatically.

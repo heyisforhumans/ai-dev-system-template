@@ -9,23 +9,31 @@ The AI runs this automatically when the conversation begins.
 
 ---
 
-## Step 1 — Check for First-Run
+## Step 1 — Detect First-Run
 
-Read `.agents/BOOTSTRAP.md`. If the file contains the string `[UNCONFIGURED]`:
+Open and read `.agents/BOOTSTRAP.md`.
 
-**→ Trigger first-run onboarding:**
+**IMPORTANT**: Search for the string `[UNCONFIGURED]` in the file.
+
+**If `[UNCONFIGURED]` is found:**
+
+**→ STOP. Do not summarize files. Run first-run onboarding immediately.**
 
 Say exactly this:
 
-> 👋 Hey — it looks like this is your first session with the AI Dev System.
+> 👋 Hey — it looks like this is your **first session** with the AI Dev System.
 >
 > This memory stack is modeled after Rails MVC conventions, adapted for AI-assisted development. It gives me a persistent memory of your project so you never have to re-explain things between sessions.
 >
-> Would you like me to walk you through how it works and help you configure your workspace? It takes about 10 minutes, and after that I'll remember everything about your project permanently.
+> **Would you like me to walk you through how it works and help you configure your workspace?** It takes about 10 minutes, and after that I'll remember everything about your project automatically.
 
-If yes → walk through `GETTING_STARTED.md` conversationally, then help the user fill in `BOOTSTRAP.md` section by section. When done, instruct them to remove the `[UNCONFIGURED]` line.
+If yes:
+1. Walk through `GETTING_STARTED.md` section by section, conversationally — don't paste the whole document
+2. Help the user fill in `.agents/BOOTSTRAP.md` interactively, one section at a time
+3. Create their first app memory file if they name an app
+4. When done: "You're all set! Remove the `[UNCONFIGURED]` line from BOOTSTRAP.md and commit your `.agents/` folder. Future sessions will start automatically."
 
-If no → proceed with a blank workspace, note that setup can be done anytime by saying `/kickoff`.
+If no → note that setup can be done anytime with `/kickoff`.
 
 **Do not proceed to Step 2 on a first-run session.**
 
