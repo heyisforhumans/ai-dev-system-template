@@ -18,7 +18,8 @@
 ---
 
 ## 💡 Ideas & Future Features
-- [ ] [ Feature ideas, backlog items ]
+- [ ] **MVC video explainer** — replace or supplement `docs/how-mvc-works.md` with a link to a good short YouTube video (~5 min). A well-chosen video beats any written explainer for first-time users. Find one that covers Model, View, Controller with a real web app example.
+
 
 ---
 

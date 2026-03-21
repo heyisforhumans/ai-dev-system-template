@@ -27,15 +27,33 @@ Say exactly this:
 >
 > **Would you like me to walk you through how it works and help you configure your workspace?** It takes about 10 minutes, and after that I'll remember everything about your project automatically.
 
-If yes:
-1. Walk through `GETTING_STARTED.md` section by section, conversationally — don't paste the whole document
-2. Help the user fill in `.agents/BOOTSTRAP.md` interactively, one section at a time
-3. Create their first app memory file if they name an app
-4. When done: "You're all set! Remove the `[UNCONFIGURED]` line from BOOTSTRAP.md and commit your `.agents/` folder. Future sessions will start automatically."
+If yes — run this onboarding script in order:
+
+**1. Explain the memory system (2–3 sentences, conversational)**
+Use the amnesia framing from `GETTING_STARTED.md`: "By default, I start every session with complete amnesia..."
+Don't paste the whole doc — summarize the key insight and check if they have questions.
+
+**2. Explain MVC — READ `docs/how-mvc-works.md` FIRST, then use the restaurant analogy**
+Do NOT free-form a generic MVC explanation. Read the doc, then explain it using the restaurant analogy:
+- Model = recipe cards (data shapes, rules)
+- Controller = kitchen manager (what happens when)
+- View = the menu (what the user sees)
+Tell them: "Every file we create together will live in one of these three layers. I always know exactly where things go."
+
+**3. Walk through `BOOTSTRAP.md` section by section**
+Ask questions to fill each section conversationally — don't paste the template at them.
+Example: "What's your name and what AI tool are you using? And what are you building?"
+
+**4. Explain the file structure briefly**
+Reference `docs/file-structure.md`. "When we start your first app, it'll look like this..." — pick 3–4 key folders and explain what lives there.
+
+**5. Wrap up**
+"You're all set! Two things to do: remove the `[UNCONFIGURED]` line from `.agents/BOOTSTRAP.md` and commit your `.agents/` folder. From now on, I'll orient myself automatically at the start of every session."
 
 If no → note that setup can be done anytime with `/kickoff`.
 
 **Do not proceed to Step 2 on a first-run session.**
+
 
 ---
 
