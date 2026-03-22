@@ -73,6 +73,9 @@ This workspace uses a 3-tier memory system:
 
 **Active memory files:**
 - [ List your app memory files here after first session ]
+- `.agents/memory/[app]-session-archive.md` — *(create when main file exceeds 150 lines; reference only, never load at session start)*
+
+> **Memory file role header convention:** Each memory file should open with a one-line statement of its role, e.g. `> GCP orchestrator view of X` or `> Active dev memory for X`. Prevents confusion in multi-workspace setups.
 
 ---
 

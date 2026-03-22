@@ -21,7 +21,25 @@ Update **all** files that were touched.
 
 ---
 
-## Step 2 — Append a Session Summary Block
+## Step 2 — Check Memory File Size *(bloat prevention)*
+
+Before writing anything, check the size of the Tier 2 memory file:
+
+```bash
+wc -l .agents/memory/[app].md
+```
+
+**If the file is over 150 lines or 10KB:**
+1. Create (or append to) `.agents/memory/[app]-session-archive.md`
+2. Move all session history entries **except the most recent 3** into the archive file
+3. Add a header to the archive: `> Reference only — do not load at session start`
+4. Leave all durable facts (snapshot table, stack, gotchas, schema, conventions) in the main file — only archive dated session entries
+
+> This prevents the "25KB context burn" failure mode where the agent reads so much history it truncates before doing any real work.
+
+---
+
+## Step 3 — Append a Session Summary Block
 
 Add to the bottom of each relevant memory file:
 
@@ -40,7 +58,7 @@ Add to the bottom of each relevant memory file:
 
 ---
 
-## Step 3 — Index Any New Component Memories
+## Step 4 — Index Any New Component Memories
 
 If `/memory-model-component` was run this session, add it to the **Component Memories** table in `.agents/memory/[app].md`:
 
@@ -55,7 +73,7 @@ Create the table if it doesn't exist yet.
 
 ---
 
-## Step 4 — Update Snapshot Tables If Anything Changed
+## Step 5 — Update Snapshot Tables If Anything Changed
 
 If the task changed any of these, update inline (not just the session block):
 - **Current State Snapshot** table — port, URL, container name, deploy status
@@ -64,7 +82,7 @@ If the task changed any of these, update inline (not just the session block):
 
 ---
 
-## Step 5 — Check Cross-System Files
+## Step 6 — Check Cross-System Files
 
 | File | Update when... |
 |---|---|
@@ -74,7 +92,7 @@ If the task changed any of these, update inline (not just the session block):
 
 ---
 
-## Step 6 — Flag If RUNBOOK Needs Updating
+## Step 7 — Flag If RUNBOOK Needs Updating
 
 If architecture changed (new dependency, changed port, new env var, different deploy process):
 > ⚠️ **RUNBOOK may need updating**: `[app]/RUNBOOK.md`
@@ -83,7 +101,7 @@ Update it now if clear-cut. If it needs thought, add to Open Questions.
 
 ---
 
-## Step 7 — Commit to Git
+## Step 8 — Commit to Git
 
 ```bash
 git add .agents/ && git commit -m "memory: [app-name] — [short description]" && git push
@@ -93,7 +111,7 @@ If a client app's memory files were also updated, commit them separately in thei
 
 ---
 
-## Step 8 — Confirm to User
+## Step 9 — Confirm to User
 
 ```
 📝 Memory saved:
