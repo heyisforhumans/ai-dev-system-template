@@ -92,6 +92,7 @@ This workspace uses a 3-tier memory system:
 | **Cheapest tool first** | File edits (free) → log read (free) → code search (cheap) → browser (expensive) |
 | **Warm kickoff** | If memory is loaded, skip re-summarizing. Say "continue from memory, we're doing X." |
 | **No silent scope creep** | If you discover a new problem mid-task, finish the current task first, then start a new one. |
+| **Never improvise conventions** | If context is truncated and you're unsure where a file goes or how a pattern works, **re-read the relevant skill before guessing**. Guessing MVC conventions when truncated is the primary source of regressions. |
 
 ---
 
