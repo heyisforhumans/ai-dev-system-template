@@ -9,6 +9,25 @@ Prevents spinning in circles. Every debug session ends with a documented outcome
 
 ---
 
+## Step 0 — Check Logs First *(do this before anything else)*
+
+**Before opening a browser, before reading code, before forming any hypothesis:**
+
+```bash
+docker logs [container-name] --tail 50
+# or for compose:
+docker compose logs [service] --tail 50 2>&1
+```
+
+Look for: `ERROR`, `Traceback`, `Exception`, `WARN`, connection refused, 404, 500.
+
+**Cost rule:** Log inspection = free. Browser/DOM inspection = expensive. Always exhaust logs first.
+
+- If the log has a clear traceback → go to Step 4 (form hypothesis). Skip 1–3.
+- If the log shows nothing → the problem is likely frontend. Now open the browser.
+
+---
+
 ## Step 1 — Read the Error
 
 Copy the full error message (including stack trace if available). Identify:

@@ -78,10 +78,20 @@ This workspace uses a 3-tier memory system:
 
 ## Key Conventions
 
-- **MVC file structure** — see `mvc_framework.md` and `docs/file-structure.md`
+- **MVC file structure** — see `docs/file-structure.md`
 - **Skills** — load when working in a layer (models, controllers, views, components)
 - **Workflows** — `/kickoff` at session start, `/save-memory` at session end
 - **Secrets** — always in `.env`, never committed
+
+### Meta-Rules (AI efficiency — always apply)
+
+| Rule | What it means |
+|---|---|
+| **One session = one goal** | Define "done" before starting. If scope creeps, stop and redefine. |
+| **Logs before browser** | Always check `docker logs` first. Browser inspection costs 5-10x more credits. |
+| **Cheapest tool first** | File edits (free) → log read (free) → code search (cheap) → browser (expensive) |
+| **Warm kickoff** | If memory is loaded, skip re-summarizing. Say "continue from memory, we're doing X." |
+| **No silent scope creep** | If you discover a new problem mid-task, finish the current task first, then start a new one. |
 
 ---
 

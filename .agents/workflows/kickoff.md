@@ -30,7 +30,7 @@ Say exactly this:
 If yes — run this onboarding script in order:
 
 **1. Explain the memory system (2–3 sentences, conversational)**
-Use the amnesia framing from `GETTING_STARTED.md`: "By default, I start every session with complete amnesia..."
+Use the amnesia framing: "By default, I start every session with complete amnesia..."
 Don't paste the whole doc — summarize the key insight and check if they have questions.
 
 **2. Explain MVC — READ `docs/how-mvc-works.md` FIRST, then use the restaurant analogy**
@@ -54,10 +54,11 @@ If no → note that setup can be done anytime with `/kickoff`.
 
 **Do not proceed to Step 2 on a first-run session.**
 
-
 ---
 
 ## Step 2 — Normal Session Orientation
+
+> **Warm session fast-path:** If the user already has memory loaded and says something like "continue from memory, we're fixing X" or "pick up where we left off" — skip to Step 3 immediately. One-liner kickoff is valid. Don't re-summarize memory the user already has.
 
 If BOOTSTRAP is configured, read it fully. Then:
 
@@ -66,6 +67,8 @@ For each app listed in BOOTSTRAP's "Active memory files" section:
 - Read the corresponding `.agents/memory/[app].md`
 - Note the most recent session entry (date + what was done)
 - Note any Open Questions
+- **Memory freshness check:** If the most recent entry is more than 7 days old, flag it:
+  > ⚠️ `[app].md` hasn't been updated in X days — memory may be stale. Consider running `/save-memory` at end of session.
 
 ### 2b — Surface the Context
 Reply with a brief orientation (3–5 bullets max):

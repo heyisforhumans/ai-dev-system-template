@@ -45,18 +45,30 @@
 
 | Workflow | Command | Purpose |
 |---|---|---|
-| `kickoff` | `/kickoff` | Session start + first-run detection |
+| `kickoff` | `/kickoff` | Session start + first-run detection + memory freshness check |
 | `new_app` | `/new-app` | Scaffold a new app's MVC structure |
 | `save_memory` | `/save-memory` | Write session facts to memory files |
 | `memory_model_component` | `/memory-model-component` | Generate deep component docs |
-| `debug` | `/debug` | Structured debugging procedure |
+| `debug` | `/debug` | Structured debugging — logs-first, hypothesis-driven |
 | `retrospective` | `/retrospective` | Post-feature lessons → memory |
+| `audit` | `/audit` | MVC filesystem lint — catch layer violations + oversized files |
+
+---
+
+## Docs
+
+| Doc | Purpose |
+|---|---|
+| `docs/how-mvc-works.md` | Restaurant analogy explainer — for onboarding |
+| `docs/file-structure.md` | Annotated folder tree for new apps |
+| `docs/multi-workspace-coordination.md` | Orchestrator + worker pattern for multi-agent setups |
+| `docs/peer_review_placeholder.md` | How to connect a GCP orchestrator for plan review |
 
 ---
 
 ## MVC Framework
 
-See `mvc_framework.md` for full conventions.
+See `docs/how-mvc-works.md` and `docs/file-structure.md` for full conventions.
 
 ---
 
